@@ -1,0 +1,109 @@
+Problem Statement
+
+Create a choose your own adventure where our hero has to make his way through
+the mountain. Have only one correct way through. When game is played display outcome
+and count of times played.
+
+nouns: create adventure
+
+verbs: create, display and count
+
+Defining diagram
+
+Inputs: userInput, y or n, 1 or 2
+
+Processing
+    enterCave = prompt("You see a cave. Do you enter? y or n.")
+    if(enterCave === "y")
+      room1 = prompt("You enter a huge cavern. You see 2 doors. 1 or 2?")
+     if(room1 === "1")
+	document.write("As you enter a giant snake attacks and kills you. The end." + "\n")
+     else
+       var room2 = prompt("A Giant sleeping red dragon is in the middle of the room. You see 2 doors. 1 or 2?")
+     if(room2 === "1") 
+       document.write("The dragon wakes up and eats you. The end." + "\n")
+     else
+     var room3 = prompt("You enter a long hallway where you can see a light at the end of the tunnel. Do you go to the end? y or n?")
+     if(room3 === "y")
+       document.write("As you exit the cave you realize you made it through the mountain. The end." + "\n")
+     else
+     document.write("Your indecision has caught up to you as you see a giant red dragon coming at you. The end." + "\n")
+else
+     document.write("You don't enter the cave and go home. The end." + "\n")
+while(keepLooping)
+     userInput = prompt("Do you want to play again? y or n.")
+     if(userInput === "n") 
+     keepLooping = false;
+     else
+     games.push(userInput)
+     playGame()
+for (var count = 1; count < games.length; count++)
+totalCount = games.length;
+document.write("Total times played: " + totalCount)
+playGame()
+
+Pseudocode
+playGame()
+   var enterCave = prompt("You see a cave. Do you enter? y or n.")
+     if(enterCave === "y")
+       room1 = prompt("You enter a huge cavern. You see 2 doors. 1 or 2?")
+     if(room1 === "1")
+       document.write("As you enter a giant snake attacks and kills you. The end." + "\n")
+     else
+       var room2 = prompt("A Giant sleeping red dragon is in the middle of the room. You see 2 doors. 1 or 2?")
+     if(room2 === "1") 
+       document.write("The dragon wakes up and eats you. The end." + "\n")
+     else
+       var room3 = prompt("You enter a long hallway where you can see a light at the end of the tunnel. Do you go to the end? y or n?")
+     if(room3 === "y")
+       document.write("As you exit the cave you realize you made it through the mountain. The end." + "\n")
+     else
+       document.write("Your indecision has caught up to you as you see a giant red dragon coming at you. The end." + "\n")
+     else
+       document.write("You don't enter the cave and go home. The end." + "\n")
+     while(keepLooping)
+       userInput = prompt("Do you want to play again? y or n.")
+     if(userInput === "n") 
+       keepLooping = false;
+     else
+       games.push(userInput)
+       playGame()
+     for (var count = 1; count < games.length; count++)
+     totalCount = games.length;
+       document.write("Total times played: " + totalCount)
+playGame() 
+END
+
+Variables: y or n and/or 1 or 2 until you die or win.
+
+TEST CASE 1:
+
+  Input values: n,n
+
+  Expected Result:You don't enter cave and go home. Total times played: 1
+
+  Actual Result:You don't enter cave and go home. Total times played: 0
+
+TEST CASE 2:
+
+  Input values:y,1,n
+
+  Expected Result:As you enter a giant snake attacks and kills you. The end. Total times played: 1 
+
+  Actual Result:As you enter a giant snake attacks and kills you. The end. Total times played: 0 
+
+TEST CASE 3:
+
+  Input values:y,2,2,y,n
+
+  Expected Result:As you exit the cave you realize you made it through the mountain. The end. Total times played: 1
+
+  Actual Result:As you exit the cave you realize you made it through the mountain. The end. Total times played: 0 
+
+TEST CASE 4:
+
+  Input values:y,2,2,n,n
+
+  Expected Result:Your indecision has caught up to you as you see a giant red dragon coming at you. The end. Total times played: 1
+
+  Actual Result:Your indecision has caught up to you as you see a giant red dragon coming at you. The end. Total times played: 0 	
